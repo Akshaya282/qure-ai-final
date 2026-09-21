@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Trained model artifacts (regenerate via train.py — large, not for git)
+backend/models/*/
+!backend/models/.gitkeep
+
+# Raw dataset copies
+backend/data/*.csv
+backend/data/*/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# OS / editor
+.DS_Store
+.vscode/

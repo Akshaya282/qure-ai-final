@@ -1,0 +1,33 @@
+# Core quantum ML stack
+qiskit==2.5.2
+qiskit-machine-learning==0.9.1
+qiskit-algorithms==0.4.0
+
+# Classical ML / deep learning
+torch==2.14.0
+torchvision              # for cnn_encoder.py (Brain Tumor imaging module) - install matching torch version
+scikit-learn==1.8.0
+xgboost                  # optional but recommended: pip install xgboost
+
+# Data handling
+numpy==2.4.4
+pandas==3.0.2
+# NOTE: ucimlrepo is NOT required — all tabular datasets are bundled directly under
+# backend/data/ as verified real CSVs (see config.py's module docstring for sourcing).
+
+# Explainability
+shap==0.52.0
+
+# Hyperparameter optimization
+optuna==5.0.0
+
+# Statistical testing (McNemar's test in evaluate.py)
+statsmodels==0.15.0
+
+# Model persistence
+joblib==1.5.3
+
+# Deployment
+fastapi==0.141.1
+uvicorn==0.53.0
+python-multipart          # required by FastAPI for image upload endpoints (Brain Tumor module)

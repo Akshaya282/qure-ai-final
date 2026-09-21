@@ -1,0 +1,861 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  --bg: #EEF1F0;
+  --surface: #FFFFFF;
+  --ink: #1A2420;
+  --ink-soft: #57645D;
+  --line: #D6DDD8;
+  --accent: #A6772C;
+  --accent-soft: #F3E9D8;
+  --teal: #3A7563;
+  --teal-soft: #E5EFEA;
+  --red: #A23B33;
+  --red-soft: #F5E6E3;
+
+  --font-display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Top landscape navbar
+   ========================================================================== */
+.navbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 20px;
+  color: var(--accent);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+
+.tab-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  overflow-x: auto;
+}
+
+.tab-link {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab-link:hover {
+  color: var(--ink);
+}
+
+.tab-link-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.app-main {
+  flex: 1;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 32px 80px;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  padding: 24px;
+  border-top: 1px solid var(--line);
+}
+
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+.hero {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+.hero-sub {
+  margin-top: 18px;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+.module-grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.module-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 24px;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s ease;
+}
+
+.module-row:hover {
+  background: var(--accent-soft);
+}
+
+.module-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.module-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.module-arrow {
+  color: var(--accent);
+  font-size: 1.1rem;
+  justify-self: end;
+}
+
+/* ==========================================================================
+   Disease page
+   ========================================================================== */
+.disease-title {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.feature-note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin: 12px 0 28px;
+  max-width: 640px;
+}
+
+.disease-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .disease-split { grid-template-columns: 1fr; }
+}
+
+.model-not-ready {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 560px;
+}
+
+.model-not-ready pre {
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 14px 16px;
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+.model-not-ready-detail {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Prediction form
+   ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+
+@media (max-width: 560px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field-label {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.form-field input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.form-field input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.submit-btn {
+  margin-top: 28px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--accent);
+  color: #FFFFFF;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #2E2C58;
+}
+
+.submit-btn:disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Image upload (Brain Tumor)
+   ========================================================================== */
+.upload-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.upload-preview {
+  max-width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Result card
+   ========================================================================== */
+.result-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px;
+  position: sticky;
+  top: 100px;
+}
+
+.result-card-empty {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.result-card-error {
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.result-label {
+  font-size: 0.78rem;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+
+.result-model-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.gauge {
+  margin-bottom: 20px;
+}
+
+.gauge-track {
+  height: 8px;
+  background: var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gauge-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.result-positive .gauge-fill { background: var(--red); }
+.result-negative .gauge-fill { background: var(--teal); }
+
+.gauge-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.result-verdict {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.result-positive .result-verdict { color: var(--red); }
+.result-negative .result-verdict { color: var(--teal); }
+
+.result-confidence {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.result-disclaimer {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Model Performance page
+   ========================================================================== */
+.performance-link {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.88rem;
+  text-decoration: none;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+.performance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.back-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  padding-top: 6px;
+}
+
+.back-link:hover { color: var(--ink); }
+
+.model-tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.model-tab {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  padding: 8px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.model-tab:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.model-tab-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .metric-cards { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 520px) {
+  .metric-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-card-label {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+
+.metric-card-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.performance-split {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  margin-bottom: 44px;
+}
+
+@media (max-width: 860px) {
+  .performance-split { grid-template-columns: 1fr; }
+}
+
+.train-time-note {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+/* Confusion matrix */
+.confusion-matrix {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-template-rows: 20px 1fr;
+  gap: 6px;
+}
+
+.cm-axis-top {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.cm-axis-side {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cm-grid {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 6px;
+}
+
+.cm-corner { }
+
+.cm-col-label,
+.cm-row-label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cm-row-label {
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.cm-cell {
+  border-radius: 4px;
+  padding: 18px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cm-cell-correct {
+  background: var(--teal-soft);
+}
+
+.cm-cell-wrong {
+  background: var(--red-soft);
+}
+
+.cm-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.cm-cell-correct .cm-value { color: var(--teal); }
+.cm-cell-wrong .cm-value { color: var(--red); }
+
+.cm-tag {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+/* Comparison table */
+.comparison-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.comparison-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.row-highlighted {
+  background: var(--accent-soft);
+}
+
+/* ==========================================================================
+   Explainable AI — feature contributions
+   ========================================================================== */
+.feature-contributions {
+  margin: 20px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.fc-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.fc-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fc-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 56px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.fc-label {
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fc-track {
+  height: 14px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fc-bar {
+  height: 100%;
+}
+
+.fc-bar-positive { background: var(--red); }
+.fc-bar-negative { background: var(--teal); }
+
+.fc-value {
+  text-align: right;
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+}
+
+.fc-legend {
+  display: flex;
+  gap: 20px;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-top: 12px;
+}
+
+.fc-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.fc-swatch-positive { background: var(--red); }
+.fc-swatch-negative { background: var(--teal); }
+
+.fc-note {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Batch CSV upload
+   ========================================================================== */
+.batch-upload {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.batch-upload-hint {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 6px 0 14px;
+}
+
+.batch-upload-hint code {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  background: var(--accent-soft);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.batch-upload-form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.submit-btn-small {
+  margin-top: 0;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+}
+
+.batch-upload-error {
+  color: var(--red);
+  font-size: 0.82rem;
+  margin-top: 10px;
+}
+
+.batch-results {
+  margin-top: 28px;
+}
+
+.batch-row-error {
+  color: var(--red);
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   Navbar: "Your Dataset" tab distinguished from disease tabs
+   ========================================================================== */
+.tab-link-general {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   General (upload-your-own-dataset) page
+   ========================================================================== */
+.module-row-general {
+  background: var(--accent-soft);
+}
+
+.general-step {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.general-step:last-child {
+  border-bottom: none;
+}
+
+.general-config-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 24px;
+  margin-top: 16px;
+  max-width: 720px;
+}
+
+@media (max-width: 640px) {
+  .general-config-form { grid-template-columns: 1fr; }
+}
+
+.general-config-form select,
+.general-config-form input[type="text"],
+.general-config-form input[type="number"] {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.general-config-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
