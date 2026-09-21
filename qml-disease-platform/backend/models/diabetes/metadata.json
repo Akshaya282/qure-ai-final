@@ -1,0 +1,32 @@
+{
+  "disease_id": "diabetes",
+  "all_feature_names": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "selected_feature_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    7
+  ],
+  "selected_feature_names": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "Insulin",
+    "BMI",
+    "Age"
+  ],
+  "n_qubits": 6,
+  "ansatz_reps": 2,
+  "feature_strategy": "mutual_info"
+}

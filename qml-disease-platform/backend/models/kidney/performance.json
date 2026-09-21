@@ -1,0 +1,207 @@
+{
+  "disease_id": "kidney",
+  "display_name": "Kidney Disease",
+  "models": {
+    "LogisticRegression": {
+      "accuracy": 0.9833,
+      "sensitivity": 0.973,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9863,
+      "auc_roc": 0.9976,
+      "confusion_matrix": {
+        "TN": 23,
+        "FP": 0,
+        "FN": 1,
+        "TP": 36
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.087,
+          0.087,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.027,
+          0.973,
+          0.973,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9976
+      },
+      "train_time_sec": 0.0017
+    },
+    "RandomForest": {
+      "accuracy": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 1.0,
+      "auc_roc": 1.0,
+      "confusion_matrix": {
+        "TN": 23,
+        "FP": 0,
+        "FN": 0,
+        "TP": 37
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8696,
+          0.9565,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.5676,
+          0.6216,
+          0.7297,
+          0.7838,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "auc": 1.0
+      },
+      "train_time_sec": 0.1537
+    },
+    "SVM_RBF": {
+      "accuracy": 0.9833,
+      "sensitivity": 1.0,
+      "specificity": 0.9565,
+      "precision": 0.9737,
+      "f1_score": 0.9867,
+      "auc_roc": 1.0,
+      "confusion_matrix": {
+        "TN": 22,
+        "FP": 1,
+        "FN": 0,
+        "TP": 37
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.027,
+          1.0,
+          1.0
+        ],
+        "auc": 1.0
+      },
+      "train_time_sec": 0.0027
+    },
+    "ShallowMLP": {
+      "accuracy": 0.9667,
+      "sensitivity": 0.9459,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9722,
+      "auc_roc": 1.0,
+      "confusion_matrix": {
+        "TN": 23,
+        "FP": 0,
+        "FN": 2,
+        "TP": 35
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.027,
+          1.0,
+          1.0
+        ],
+        "auc": 1.0
+      },
+      "train_time_sec": 0.0388
+    },
+    "HybridVQC": {
+      "accuracy": 0.9667,
+      "sensitivity": 0.973,
+      "specificity": 0.9565,
+      "precision": 0.973,
+      "f1_score": 0.973,
+      "auc_roc": 0.9988,
+      "confusion_matrix": {
+        "TN": 22,
+        "FP": 1,
+        "FN": 1,
+        "TP": 36
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0435,
+          0.0435,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.027,
+          0.973,
+          0.973,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9988
+      },
+      "train_time_sec": 109.2355
+    },
+    "QSVM": {
+      "accuracy": 0.9833,
+      "sensitivity": 1.0,
+      "specificity": 0.9565,
+      "precision": 0.9737,
+      "f1_score": 0.9867,
+      "auc_roc": 1.0,
+      "confusion_matrix": {
+        "TN": 22,
+        "FP": 1,
+        "FN": 0,
+        "TP": 37
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.027,
+          1.0,
+          1.0
+        ],
+        "auc": 1.0
+      },
+      "train_time_sec": 32.6073
+    }
+  },
+  "test_set_size": 60,
+  "test_set_positive_rate": 0.6167,
+  "best_model_by_accuracy": "RandomForest"
+}

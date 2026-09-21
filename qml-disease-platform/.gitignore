@@ -4,9 +4,8 @@ __pycache__/
 .venv/
 venv/
 
-# Trained model artifacts (regenerate via train.py — large, not for git)
-backend/models/*/
-!backend/models/.gitkeep
+# Trained model artifacts — INCLUDED in git (small, ~3-4MB total) so a fresh deploy has
+# working models immediately without needing to retrain on the server.
 
 # Raw dataset copies
 backend/data/*.csv

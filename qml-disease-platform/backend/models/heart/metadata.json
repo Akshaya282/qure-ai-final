@@ -1,0 +1,37 @@
+{
+  "disease_id": "heart",
+  "all_feature_names": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "selected_feature_indices": [
+    2,
+    7,
+    8,
+    9,
+    11,
+    12
+  ],
+  "selected_feature_names": [
+    "cp",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "ca",
+    "thal"
+  ],
+  "n_qubits": 6,
+  "ansatz_reps": 2,
+  "feature_strategy": "mutual_info"
+}

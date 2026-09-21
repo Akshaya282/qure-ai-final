@@ -1,0 +1,7 @@
+Model,Accuracy,Sensitivity,Specificity,Precision,F1,AUC-ROC,Train Time (s)
+RandomForest,1.0,1.0,1.0,1.0,1.0,1.0,0.154
+LogisticRegression,0.9833,0.973,1.0,1.0,0.9863,0.9976,0.002
+SVM_RBF,0.9833,1.0,0.9565,0.9737,0.9867,1.0,0.003
+QSVM,0.9833,1.0,0.9565,0.9737,0.9867,1.0,32.607
+ShallowMLP,0.9667,0.9459,1.0,1.0,0.9722,1.0,0.039
+HybridVQC,0.9667,0.973,0.9565,0.973,0.973,0.9988,109.236

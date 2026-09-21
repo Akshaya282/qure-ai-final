@@ -1,0 +1,48 @@
+{
+  "disease_id": "kidney",
+  "all_feature_names": [
+    "age",
+    "bp",
+    "sg",
+    "al",
+    "su",
+    "rbc",
+    "pc",
+    "pcc",
+    "ba",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wc",
+    "rc",
+    "htn",
+    "dm",
+    "cad",
+    "appet",
+    "pe",
+    "ane"
+  ],
+  "selected_feature_indices": [
+    2,
+    3,
+    11,
+    14,
+    15,
+    17
+  ],
+  "selected_feature_names": [
+    "sg",
+    "al",
+    "sc",
+    "hemo",
+    "pcv",
+    "rc"
+  ],
+  "n_qubits": 6,
+  "ansatz_reps": 2,
+  "feature_strategy": "mutual_info"
+}

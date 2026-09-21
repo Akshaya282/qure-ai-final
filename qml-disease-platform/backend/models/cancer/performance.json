@@ -1,0 +1,239 @@
+{
+  "disease_id": "cancer",
+  "display_name": "Cancer (Breast)",
+  "models": {
+    "LogisticRegression": {
+      "accuracy": 0.9767,
+      "sensitivity": 0.9375,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9677,
+      "auc_roc": 0.9983,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 2,
+        "TP": 30
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0185,
+          0.0185,
+          0.037,
+          0.037,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.0312,
+          0.9375,
+          0.9375,
+          0.9688,
+          0.9688,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9983
+      },
+      "train_time_sec": 0.0016
+    },
+    "RandomForest": {
+      "accuracy": 0.9767,
+      "sensitivity": 0.9375,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9677,
+      "auc_roc": 0.9988,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 2,
+        "TP": 30
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0185,
+          0.0185,
+          0.5185,
+          0.5926,
+          0.6111,
+          0.6481,
+          0.7407,
+          0.9444,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.5,
+          0.5625,
+          0.9375,
+          0.9375,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9988
+      },
+      "train_time_sec": 0.1671
+    },
+    "SVM_RBF": {
+      "accuracy": 0.9767,
+      "sensitivity": 0.9375,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9677,
+      "auc_roc": 0.9988,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 2,
+        "TP": 30
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0185,
+          0.0185,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.0312,
+          0.9375,
+          0.9375,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9988
+      },
+      "train_time_sec": 0.0041
+    },
+    "ShallowMLP": {
+      "accuracy": 0.9767,
+      "sensitivity": 0.9375,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9677,
+      "auc_roc": 0.9988,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 2,
+        "TP": 30
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0185,
+          0.0185,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.0312,
+          0.9375,
+          0.9375,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9988
+      },
+      "train_time_sec": 0.0373
+    },
+    "HybridVQC": {
+      "accuracy": 0.6279,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": 0.0,
+      "f1_score": 0.0,
+      "auc_roc": 0.9983,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 32,
+        "TP": 0
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0185,
+          0.0185,
+          0.037,
+          0.037,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.0312,
+          0.9375,
+          0.9375,
+          0.9688,
+          0.9688,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9983
+      },
+      "train_time_sec": 110.4222
+    },
+    "QSVM": {
+      "accuracy": 0.9767,
+      "sensitivity": 0.9375,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1_score": 0.9677,
+      "auc_roc": 0.9936,
+      "confusion_matrix": {
+        "TN": 54,
+        "FP": 0,
+        "FN": 2,
+        "TP": 30
+      },
+      "roc_curve": {
+        "fpr": [
+          0.0,
+          0.0,
+          0.0,
+          0.0741,
+          0.0741,
+          0.1296,
+          0.1296,
+          1.0
+        ],
+        "tpr": [
+          0.0,
+          0.0312,
+          0.9375,
+          0.9375,
+          0.9688,
+          0.9688,
+          1.0,
+          1.0
+        ],
+        "auc": 0.9936
+      },
+      "train_time_sec": 34.4376
+    }
+  },
+  "test_set_size": 86,
+  "test_set_positive_rate": 0.3721,
+  "best_model_by_accuracy": "LogisticRegression"
+}
